@@ -1,4 +1,4 @@
-package com.oracle.s3bucket.config;
+package com.bugcode.s3bucket.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;

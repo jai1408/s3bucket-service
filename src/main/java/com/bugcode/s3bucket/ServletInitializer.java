@@ -1,4 +1,4 @@
-package com.oracle.s3bucket;
+package com.bugcode.s3bucket;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

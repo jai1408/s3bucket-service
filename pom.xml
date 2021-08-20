@@ -10,8 +10,8 @@
     </parent>
     <groupId>com.oracle.s3bucket</groupId>
     <artifactId>s3bucket-service</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
     <name>s3bucket-service</name>
     <description>Test project to demonstrate aws simple storage service</description>
     <properties>
@@ -52,10 +52,37 @@
     </dependencies>
 
     <build>
+        <finalName>s3bucket-service</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>1.4.3</version>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <goals>
+                            <goal>build</goal>
+                            <goal>push</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <repository>jai14081993/s3bucket-service</repository>
+                    <tag>${project.version}</tag>
+                </configuration>
+                <dependencies>
+                    <!-- To make this work on JDK 9+ -->
+                    <dependency>
+                        <groupId>javax.activation</groupId>
+                        <artifactId>javax.activation-api</artifactId>
+                        <version>1.2.0</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>

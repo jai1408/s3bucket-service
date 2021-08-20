@@ -1,4 +1,4 @@
-package com.oracle.s3bucket.model;
+package com.bugcode.s3bucket.model;
 
 import com.amazonaws.services.s3.model.Owner;
 

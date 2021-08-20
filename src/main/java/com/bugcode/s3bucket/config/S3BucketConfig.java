@@ -1,4 +1,4 @@
-package com.oracle.s3bucket.config;
+package com.bugcode.s3bucket.config;
 
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
@@ -22,10 +22,8 @@ public class S3BucketConfig {
 
   private AmazonS3 buildS3Config() {
     System.setProperty("com.amazonaws.sdk.disableCertChecking", "true");
-
     AWSCredentials credentials =
         new BasicAWSCredentials(propertiesConfig.getAccessKey(), propertiesConfig.getSecretKey());
-
     return AmazonS3ClientBuilder.standard()
         .withCredentials(new AWSStaticCredentialsProvider(credentials))
         .withRegion(Regions.AP_SOUTH_1)
