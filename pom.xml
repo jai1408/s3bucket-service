@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.oracle.s3bucket</groupId>
     <artifactId>s3bucket-service</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
     <name>s3bucket-service</name>
     <description>Test project to demonstrate aws simple storage service</description>

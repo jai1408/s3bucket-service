@@ -84,8 +84,7 @@ public class S3BucketService {
     return s3ObjList;
   }
 
-  public String upload(String localPath) {
-    String bucketName = propertiesConfig.getBucketName();
+  public String upload(String localPath, String bucketName) {
     String keyName = Paths.get(localPath).getFileName().toString();
     try {
       s3BucketConfig.getS3Client().putObject(bucketName, keyName, new File(localPath));

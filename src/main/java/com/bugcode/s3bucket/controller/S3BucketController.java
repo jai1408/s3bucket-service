@@ -30,9 +30,9 @@ public class S3BucketController {
   }
 
   @PostMapping("/upload")
-  public String upload(@RequestHeader String localPath) {
-    log.info("Uploading file from local path {} ",localPath);
-    return service.upload(localPath);
+  public String upload(@RequestHeader String localPath, @RequestParam String bucketName) {
+    log.info("Uploading file to bucket {} from local path {} ",bucketName, localPath);
+    return service.upload(localPath, bucketName);
   }
 
   @GetMapping("/download")
