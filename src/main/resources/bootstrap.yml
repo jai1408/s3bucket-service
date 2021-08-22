@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: s3bucket-service
+  cloud:
+    config:
+      uri: http://ec2-3-6-37-18.ap-south-1.compute.amazonaws.com
+      enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
